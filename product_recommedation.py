@@ -19,6 +19,7 @@ st.subheader("Find Similar Products")
 product_name = st.text_input("Enter a Product Name")
 
 if st.button("Get Recommendations"):
+    product_name = product_name.strip().upper()
     if product_name in similarity_df.columns:
         sim_scores = similarity_df[product_name].sort_values(ascending=False)
         top_similar = sim_scores.iloc[1:6]  # skiping 1 item since will be same itself
