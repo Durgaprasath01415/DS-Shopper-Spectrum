@@ -21,7 +21,7 @@ product_name = st.text_input("Enter a Product Name")
 if st.button("Get Recommendations"):
     if product_name in similarity_df.columns:
         sim_scores = similarity_df[product_name].sort_values(ascending=False)
-        top_similar = sim_scores.iloc[1:6]  # skip itself
+        top_similar = sim_scores.iloc[1:6]  # skiping 1 item since will be same itself
         st.success("Top 5 Similar Products:")
         for i, (prod, score) in enumerate(top_similar.items(), 1):
             st.write(f"{i}. {prod} (Similarity: {score:.2f})")
