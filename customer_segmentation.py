@@ -27,11 +27,11 @@ def predict_cluster(recency, frequency, monetary):
     cluster_labels = {
         0: 'Regular',
         1: 'High-Value',
-        2: 'At-Risk'
+        2: 'Occasional'
     }
 
     segment = cluster_labels.get(cluster)
     st.success(f"Predicted Customer Segment: **{segment}**")
 
 if st.button("Predict Customer Segment"):
-    segment = predict_cluster(recency, frequency, monetary)
+    segment = predict_cluster(recency, frequency, monetary)s
